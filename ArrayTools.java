@@ -27,7 +27,7 @@ public class ArrayTools {
 
         int[] reversedArray;
 
-        // Start code with encryption and decryption
+        // Collect a string and value for encryption the string and decryption
         System.out.println();
         System.out.print("Enter a string to encrypt: ");
         usrString = usrInput.nextLine();
@@ -51,9 +51,8 @@ public class ArrayTools {
         System.out.println(decryptedString);
         System.out.println();
 
-        // Code for checking average of values user input
+        // Collect array length and elements from user
         System.out.print("Enter the length of array: ");
-
         try {
             lengthOfArray = usrInput.nextInt();
         } catch (InputMismatchException e) {
@@ -61,11 +60,9 @@ public class ArrayTools {
             System.out.println("Please input a valid number!");
             return;
         }
-        
         usrArray = new int[lengthOfArray];
 
         System.out.println("Enter numerical values:");
-
         for (int i = 0; i < lengthOfArray; i++) {
             try {
                 usrArray[i] = usrInput.nextInt();
@@ -75,22 +72,22 @@ public class ArrayTools {
                 return;
             }
         }
-
         System.out.println();
+
         System.out.print("Testing methods with [ ");
         for (int i = 0; i < usrArray.length; i++) {
             System.out.print(usrArray[i] + " ");
         }
         System.out.print("]");
-
         System.out.println();
+
+        // Print average of elements in an array
         arrayAvg = arrayAvg(usrArray);
         System.out.println("The average is " + String.format("%.1f", arrayAvg));
         System.out.println();
 
-        // Code for checking if an input is contained in an array
+        // Check whether a value contains in the array
         System.out.print("Enter a value to search for: ");
-
         try {
             usrValue = usrInput.nextInt();
         } catch (InputMismatchException e) {
@@ -98,7 +95,6 @@ public class ArrayTools {
             System.out.println("Please input a valid number!");
             return;
         }
-
         arrayHasValue = arrayContains(usrArray, usrValue);
         if (arrayHasValue) {
             System.out.println("The array contains " + usrValue);
@@ -107,7 +103,7 @@ public class ArrayTools {
         }
         System.out.println();
         
-        // Code for reversed array
+        // Reverse an array and print
         reversedArray = reverse(usrArray);
         System.out.print("The array reversed is [ ");
         for (int i = 0; i < reversedArray.length; i++) {
